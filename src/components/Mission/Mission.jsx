@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Accordion, AccordionItem } from "@szhsin/react-accordion"
+import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import "./Mission.css"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import { IoIosArrowDown } from "react-icons/io"

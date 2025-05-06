@@ -3,9 +3,12 @@ import { Accordion, AccordionItem } from "@szhsin/react-accordion"
 import "./Mission.css"
 import SectionTitle from "../SectionTitle/SectionTitle"
 import { IoIosArrowDown } from "react-icons/io"
+import { motion } from "framer-motion"
+import { useMediaQuery } from "react-responsive"
 
 const Mission = () => {
     const [iconClicked, setIconClicked] = useState(null)
+    const isSmallScreen = useMediaQuery({ maxWidth: 600 })
     const items = [
         {
             header: "Showcasing Talents and skills",
@@ -31,28 +34,49 @@ const Mission = () => {
                 "To equip individuals with the tools for effective team guidance and strategic decision-making. We focus on nurturing skills that drive successful, visionary leadership.",
         },
     ]
+
+    const accordianVariant = {
+        small: {
+            y: [50, 0],
+            opacity: [0, 1],
+            transition: { delay: 0.4, duration: 0.5, type: "spring", stiffness: 30, damping: 10 },
+        },
+        large: {
+            y: [50, 0],
+            opacity: [0, 1],
+            transition: { delay: 0.4, duration: 0.5, type: "spring", stiffness: 30, damping: 10 },
+        },
+    }
+    const commitmentVariant = {
+        small: {
+            y: [50, 0],
+            opacity: [0, 1],
+            transition: { delay: 0.6, duration: 0.5, type: "spring", stiffness: 30, damping: 10 },
+        },
+        large: {
+            y: [50, 0],
+            opacity: [0, 1],
+            transition: { delay: 0.6, duration: 0.5, type: "spring", stiffness: 30, damping: 10 },
+        },
+    }
+
+    const getVariant = () => {
+        if (isSmallScreen) return "small"
+        return "large"
+    }
+
     return (
         <div className="mission">
             <SectionTitle text="Mission" />
             <div className="mission-main">
-                <div className="mission-left">
+                <motion.div
+                    variants={accordianVariant}
+                    viewport={{once:true}}
+                    whileInView={getVariant()}
+                    className="mission-left"
+                >
                     <h2 className="section-header">Why we are here?</h2>
                     <Accordion>
-                        {/* {items.map(({ header, content }, i) => (
-                            <AccordionItem onClick={()=> setIconClicked("accordian-icon"+(i+1))}
-                                header={
-                                    <div className="accordion-header"> 
-                                        <IoIosArrowDown className={`mission-accordian-icon ${iconClicked}`}/>
-                                        {header}
-                                    </div>
-                                }
-                                key={i}
-                                className="mission-accordian-item"
-                            >
-                                {content}
-                            </AccordionItem>
-                        ))} */}
-
                         <AccordionItem
                             onClick={() => setIconClicked("accordian-icon1")}
                             header={
@@ -141,22 +165,27 @@ const Mission = () => {
                             We focus on nurturing skills that drive successful, visionary leadership.
                         </AccordionItem>
                     </Accordion>
-                </div>
-                <div className="mission-right">
+                </motion.div>
+                <motion.div
+                    variants={commitmentVariant}
+                    viewport={{once:true}}
+                    whileInView={getVariant()}
+                    className="mission-right"
+                >
                     <h2 className="section-header">Our Commitment</h2>
                     <div className="mission-right-text">
-                    <p>
-                        We're dedicated to fostering a community where growth, innovation, and collaboration are the
-                        pillars. Our mentors and peers are here to support your journey every step of the way. ensuring that
-                        you're equipped for the future.
-                    </p>
-                    <p>
-                        We are not just preparing you for the future; we are equipping to shape it. Whether you're seeking
-                        to enhance your skills, launch a new project, or simply connect with like-minded individuals, our
-                        community is here to support you every step of the way.
-                    </p>
+                        <p>
+                            We're dedicated to fostering a community where growth, innovation, and collaboration are the
+                            pillars. Our mentors and peers are here to support your journey every step of the way. ensuring
+                            that you're equipped for the future.
+                        </p>
+                        <p>
+                            We are not just preparing you for the future; we are equipping to shape it. Whether you're
+                            seeking to enhance your skills, launch a new project, or simply connect with like-minded
+                            individuals, our community is here to support you every step of the way.
+                        </p>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

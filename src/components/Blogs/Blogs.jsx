@@ -13,7 +13,7 @@ const Blogs = () => {
           <h2 className='section-header'>Uncover Insights in Our Blogs</h2>
           <div className="blog-main">
               <div className="blog-container">
-                  <img src={Img1} alt="" />
+                  <img src={Img1} alt="blog-image" />
                   <div className="blog-details">
                       <h3 className='blog-title'>Debugging Demystified</h3>
                       <p className='blog-description'>Debugging is a critical skill for any programmer, yet it often feels daunting. This blog post aims to demystify the debugging process and provide practical strategies for tackling code issues effectively. We’ll start by discussing common types of bugs and their typical causes, such as syntax errors, logical errors, and runtime exceptions.</p>
@@ -21,7 +21,7 @@ const Blogs = () => {
                   </div>
               </div>
               <div className="blog-container">
-                  <img src={Img2} alt="" />
+                  <img src={Img2} alt="blog-image" />
                   <div className="blog-details">
                       <h3 className='blog-title'>Spotlight on Student-Driven Initiatives</h3>
                       <p className='blog-description'>Student-driven initiatives are at the heart of campus innovation, bringing fresh ideas and practical solutions to university life. This blog post shines a spotlight on several outstanding projects led by students at Excel Engineering College, showcasing their creativity and impact.</p>
@@ -29,7 +29,7 @@ const Blogs = () => {
                   </div>
               </div>
               <div className="blog-container">
-                  <img src={Img3} alt="" />
+                  <img src={Img3} alt="blog-image" />
                   <div className="blog-details">
                       <h3 className='blog-title'>How to Organize a Successful Hackathon</h3>
                       <p className='blog-description'>Organizing a hackathon can be an exciting yet challenging endeavor. This blog post provides a comprehensive guide for first-time hosts on how to plan and execute a successful hackathon event.</p>

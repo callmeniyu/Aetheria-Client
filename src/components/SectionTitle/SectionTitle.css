@@ -1,5 +1,6 @@
 .sectiontitle{
     padding: 0.5rem 2rem;
+    font-family: "poppins";
     width: 8rem;
     display: flex;
     justify-content: center;
@@ -7,7 +8,8 @@
     background-color: #E6F5FF;
     color: #56a8e7;
     border-radius: 3rem;
-    font-weight: 900;
+    font-weight: 600;
+    font-size: 1.2rem;
     margin-left: auto;
     margin-right: auto;
 }
